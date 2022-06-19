@@ -8,6 +8,7 @@ contract myContract {
     struct voterInfo {
         string voter;
         string votedParty;
+        uint256 age;
     }
 
     voterInfo[] voterArray;
@@ -30,19 +31,19 @@ contract myContract {
             keccak256(abi.encodePacked("XYZ"))
         ) {
             XYZvotes++;
-            voterArray.push(voterInfo(_votername, _party));
+            voterArray.push(voterInfo(_votername, _party, _age));
         } else if (
             keccak256(abi.encodePacked(_party)) ==
             keccak256(abi.encodePacked("ABC"))
         ) {
             ABCvotes++;
-            voterArray.push(voterInfo(_votername, _party));
+            voterArray.push(voterInfo(_votername, _party, _age));
         } else if (
             keccak256(abi.encodePacked(_party)) ==
             keccak256(abi.encodePacked("EYK"))
         ) {
             EYKvotes++;
-            voterArray.push(voterInfo(_votername, _party));
+            voterArray.push(voterInfo(_votername, _party, _age));
         }
     }
 
